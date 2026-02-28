@@ -15,7 +15,8 @@ registerDFF #(.WIDTH(25)) DFF1(.clk(clk), .D(A),            .Q(A_in) 	);
 registerDFF #(.WIDTH(25)) DFF2(.clk(clk), .D(B),            .Q(B_in) 	);
 registerDFF #(.WIDTH(25)) DFF3(.clk(clk), .D(sum_out),      .Q(sum)	 	);
 registerDFF #(.WIDTH(1))  DFF4(.clk(clk), .D(overflow_out), .Q(overflow));
-(* keep_hierarchy = "yes" *)
+//(* keep_hierarchy = "yes" *) Apply this if implementing on an FPGA to meet any timing constraints. 
 adder A1(.A(A_in), .B(B_in), .sum(sum_out), .overflow(overflow_out));
+
 
 endmodule
